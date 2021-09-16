@@ -28,6 +28,3 @@ compiles the software by
 
 ```
 make -j
-```
-
-
