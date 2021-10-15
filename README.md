@@ -1,5 +1,5 @@
 
-```
+
 
 # Mat3D #
 Mat3D software, a toolkit for fast material modeling and design powered by Fast Fourier Transform (FFT) methods.
@@ -27,7 +27,7 @@ Make sure dependencies are installed properly. Then to compile in setup mode
 
 ```
 mkdir build && cd build && cmake ..
-```
+
 
 compiles the software by
 
