@@ -17,8 +17,8 @@ Dependencies for the project are:
 
 You also need these header libraries:
 
-*Eigen
-*CImg
+* Eigen
+* CImg
 
 
 ### Compile & Build ###
