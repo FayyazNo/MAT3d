@@ -113,7 +113,7 @@ int noPhases=2;
 	MatrixDdd X(6,1);
 	X<<0,1,0,0,0,0;
 //******************************************************************************
-	string mater_behav="ep";
+	string mater_behav="e";
 	FFT_Analysis3D test(Nx, Ny,Nz, mater_behav);                 // Construct an analysis plan with assignment of the RVE size
 
 
