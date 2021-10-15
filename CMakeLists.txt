@@ -132,19 +132,18 @@ SET(
     src/2d/FFT_analysis2D.cpp
     src/3d/FFT_analysis3D.cpp
     src/rec/reconstruction.cpp
-    src/3dTherm/FFT_thermal3D.cpp
-    src/percolation/percolation.cpp )
+    src/3dTherm/FFT_thermal3D.cpp )
 
 SET(MAT3D_SRCS   example/3d/main.cpp )
 SET(MAT2D_SRCS   example/2d/main.cpp )
 SET(REC3D_SRCS   example/reconst3d/main.cpp )
 SET(THERM3D_SRCS example/3d_thermal/main.cpp )
-SET(PERCOLATION_SRCS example/percolation/main.cpp )
-SET(OPT_SRCS example/opt/main.cpp )
+#SET(PERCOLATION_SRCS example/percolation/main.cpp )
+#SET(OPT_SRCS example/opt/main.cpp )
 #SET(OMP_SRCS example/test/main.cpp )
-SET(JSON_SRCS example/json/main.cpp )
+#SET(JSON_SRCS example/json/main.cpp )
 
-SET(ALL_SRCS ${MATFFT3D_SRCS} ${MAT3D_SRCS} ${MAT2D_SRCS} ${REC3D_SRCS} ${THERM3D_SRCS}  ${PERCOLATION_SRCS} ${OPT_SRC} ${JSON_SRCS} 
+SET(ALL_SRCS ${MATFFT3D_SRCS} ${MAT3D_SRCS} ${MAT2D_SRCS} ${REC3D_SRCS} ${THERM3D_SRCS}  
     PROPERTIES COMPILE_FLAGS "-fPIC ${MPI_CXX_COMPILE_FLAGS}")
 
 # builiding libraries
@@ -174,20 +173,20 @@ TARGET_LINK_LIBRARIES(rec3d MatFFT3D)
 ADD_EXECUTABLE(therm3d ${THERM3D_SRCS})
 TARGET_LINK_LIBRARIES(therm3d MatFFT3D)
 
-ADD_EXECUTABLE(percolation ${PERCOLATION_SRCS})
-TARGET_LINK_LIBRARIES(percolation MatFFT3D)
+#ADD_EXECUTABLE(percolation ${PERCOLATION_SRCS})
+#TARGET_LINK_LIBRARIES(percolation MatFFT3D)
 
 #ADD_EXECUTABLE(omp ${OMP_SRCS})
 #TARGET_LINK_LIBRARIES(omp MatFFT3D)
 
-ADD_EXECUTABLE(opt ${OPT_SRCS})
-TARGET_LINK_LIBRARIES(opt MatFFT3D)
+#ADD_EXECUTABLE(opt ${OPT_SRCS})
+#ARGET_LINK_LIBRARIES(opt MatFFT3D)
 
 
-ADD_EXECUTABLE(json ${JSON_SRCS})
-TARGET_LINK_LIBRARIES(json MatFFT3D)
+#ADD_EXECUTABLE(json ${JSON_SRCS})
+#TARGET_LINK_LIBRARIES(json MatFFT3D)
 
-INSTALL(TARGETS mat3d mat2d rec3d therm3d percolation opt json RUNTIME DESTINATION Matfft3d/bin
+INSTALL(TARGETS mat3d mat2d rec3d therm3d RUNTIME DESTINATION Matfft3d/bin
         PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
         GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
 
@@ -203,9 +202,8 @@ INCLUDE(InstallRequiredSystemLibraries)
 SET(CPACK_GENERATOR DEB)
 SET(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
 #SET(CPACK_DEBIAN_PACKAGE_DEPENDS "libvtk7.1 (>= 6.2)")
-SET(CPACK_PACKAGE_CONTACT "msafdari@gmail.com")
+SET(CPACK_PACKAGE_CONTACT "dehnavifn@gmail.com")
 SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "MATFFT3D: A FFT plaftorm for efficient design of materials.")
-SET(CPACK_PACKAGE_VENDOR "SIMSOFTS LLC")
 SET(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
 SET(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/Copyright.txt")
 SET(CPACK_PACKAGE_VERSION_MAJOR ${MATFFT3D_MAJOR_VERSION})
