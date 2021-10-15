@@ -30,7 +30,7 @@ Make sure dependencies are installed properly. Then to compile in setup mode
 mkdir build && cd build && cmake ..
 
 
-
+```
 compiles the software by
 
 ```
