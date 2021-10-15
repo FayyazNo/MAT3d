@@ -15,6 +15,11 @@ Dependencies for the project are:
 * Opt++
 * NLOPT 
 
+You also need these header libraries:
+
+*Eigen
+*CImg
+
 
 ### Compile & Build ###
 
